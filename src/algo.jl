@@ -44,6 +44,7 @@ function backwardpass!(sddp, g, paths)
         if ~isleaf(node)
             # use cutgenerator from StructDualDynProg
             cutgenerator = magic
+            csol = solve(child, sol)
 
             # TODO: should we use all children nodes
             # or only those crossed during forward pass?
